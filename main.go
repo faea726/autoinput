@@ -10,19 +10,20 @@ import (
 )
 
 const INPUT_FILE string = "input.txt"
-const DELAY int = 5
+const DELAY int = 1
 
 func main() {
 
 	list, err := readLines(INPUT_FILE)
 	if err != nil {
 		fmt.Println(err)
-		robotgo.Sleep(DELAY)
+		robotgo.Sleep(DELAY * 5)
 		os.Exit(0)
 	}
 
 	robotgo.Click()
-	robotgo.Sleep(1)
+	robotgo.Sleep(DELAY)
+
 	for _, item := range list {
 		fmt.Println(item)
 		sendMess(item)
@@ -31,10 +32,10 @@ func main() {
 
 func sendMess(mess string) {
 	robotgo.TypeStr(mess)
-	robotgo.Sleep(1)
+	robotgo.Sleep(DELAY)
 
 	robotgo.KeyTap("enter")
-	robotgo.Sleep(1)
+	robotgo.Sleep(DELAY)
 }
 
 func readLines(path string) ([]string, error) {
