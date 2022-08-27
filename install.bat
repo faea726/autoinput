@@ -1,0 +1,1 @@
+go build -o autoinput.exe .\main.go
