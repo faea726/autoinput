@@ -29,6 +29,7 @@ func main() {
 		sendMess(item)
 	}
 }
+
 func sendMess(mess string) {
 	robotgo.TypeStr(mess)
 	time.Sleep(time.Second)
