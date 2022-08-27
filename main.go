@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/go-vgo/robotgo"
 )
@@ -18,12 +17,12 @@ func main() {
 	list, err := readLines(INPUT_FILE)
 	if err != nil {
 		fmt.Println(err)
-		time.Sleep(time.Duration(DELAY) * time.Second)
+		robotgo.Sleep(DELAY)
 		os.Exit(0)
 	}
 
 	robotgo.Click()
-	time.Sleep(time.Second)
+	robotgo.Sleep(1)
 	for _, item := range list {
 		fmt.Println(item)
 		sendMess(item)
@@ -32,9 +31,10 @@ func main() {
 
 func sendMess(mess string) {
 	robotgo.TypeStr(mess)
-	time.Sleep(time.Second)
+	robotgo.Sleep(1)
+
 	robotgo.KeyTap("enter")
-	time.Sleep(time.Second)
+	robotgo.Sleep(1)
 }
 
 func readLines(path string) ([]string, error) {
