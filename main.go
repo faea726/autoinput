@@ -11,7 +11,7 @@ import (
 )
 
 const INPUT_FILE string = "input.txt"
-const DELAY int = 2
+const DELAY int = 5
 
 func main() {
 
