@@ -9,11 +9,12 @@ import (
 	"github.com/go-vgo/robotgo"
 )
 
-const INPUT_FILE string = "input.txt"
-const DELAY int = 1
+const (
+	INPUT_FILE string = "input.txt"
+	DELAY      int    = 1
+)
 
 func main() {
-
 	list, err := readLines(INPUT_FILE)
 	if err != nil {
 		fmt.Println(err)
